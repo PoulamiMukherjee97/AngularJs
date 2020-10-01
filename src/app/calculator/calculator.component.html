@@ -1,0 +1,21 @@
+<div class="container fluid">
+<p id="input-text" type="text" style="width:21%" class="mr-2 mb-0 p-3">0</p>
+<br>
+<button (click)="add()" class="btn btn-primary btn-class" [disabled]="disableSymbols" >+</button>
+<button (click)="sub()" class="btn btn-primary btn-class" [disabled]="disableSymbols" >-</button>
+<button (click)="mul()" class="btn btn-primary btn-class" [disabled]="disableSymbols" >*</button>
+<button (click)="division()" class="btn btn-primary btn-class" [disabled]="disableSymbols" >/</button><br>
+<button (click)="numberbtn($event)" class="btn btn-success btn-class" [disabled]="disableNumbers" value="1">1</button>
+<button (click)="numberbtn($event)" class="btn btn-success btn-class" [disabled]="disableNumbers" value="2">2</button>
+<button (click)="numberbtn($event)" class="btn btn-success btn-class" [disabled]="disableNumbers" value="3">3</button>
+<button (click)="numberbtn($event)" class="btn btn-success btn-class" [disabled]="disableNumbers" value="4">4</button><br>
+<button (click)="numberbtn($event)" class="btn btn-success btn-class" [disabled]="disableNumbers" value="5">5</button>
+<button (click)="numberbtn($event)" class="btn btn-success btn-class" [disabled]="disableNumbers" value="6">6</button>
+<button (click)="numberbtn($event)" class="btn btn-success btn-class" [disabled]="disableNumbers" value="7">7</button>
+<button (click)="numberbtn($event)" class="btn btn-success btn-class" [disabled]="disableNumbers" value="8">8</button><br>
+<button (click)="numberbtn($event)" class="btn btn-success btn-class" [disabled]="disableNumbers" value="9">9</button>
+<button (click)="numberbtn($event)" class="btn btn-success btn-class" [disabled]="disableNumbers" value="0">0</button>
+<button (click)="equal()" class="btn btn-danger btn-class" >=</button>
+<button (click)="delete()" class="btn btn-danger btn-class"  >C</button>
+
+</div>

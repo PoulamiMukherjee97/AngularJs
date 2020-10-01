@@ -1,0 +1,83 @@
+<div class="container-fluid px-4">
+    <h1 class="mb-4">Form Validation</h1>
+    <form [formGroup]="form">
+        <div class="form-group mb-4">
+            <input formControlName="associateName" type="text" placeholder="Associate Name" class="form-control" id="associateName">
+            <div class="alert" *ngIf="associateName.touched && !associateName.valid">
+                <div *ngIf="associateName.errors.required">This is a required field</div>
+                <div *ngIf="associateName.errors.minlength || associateName.errors.maxlength ">Accepts Alphabets,space & Min 5 to Max 30 Char</div>
+                <div *ngIf="associateName.errors.pattern">Please enter the Associate Name </div>
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <input formControlName="associateId"  type="text" placeholder="Associate Id" class="form-control" id="associateId"  >
+            <div class="alert" *ngIf="associateId.touched && !associateId.valid">
+                <div *ngIf="associateId.errors.required">This is a required field</div>
+                <div *ngIf="associateId.errors.minlength || associateId.errors.maxlength ">Invalid Associate Id</div>
+                <div *ngIf="associateId.errors.pattern">Please enter the Associate Id </div>
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <input formControlName="projectId"  type="text" placeholder="Project Id" class="form-control" id="projectId">
+            <div class="alert" *ngIf="projectId.touched && !projectId.valid">
+                <div *ngIf="projectId.errors.required">This is a required field</div>
+                <div *ngIf="projectId.errors.minlength || projectId.errors.maxlength  ">Invalid Project Id</div>
+                <div *ngIf="projectId.errors.pattern">Please enter the Project Id </div>
+            </div>
+        </div>
+        <div formGroupName="location" class="location-logic mb-4">
+            <div class="radio">
+                <label class="mr-2">
+                    <input type="radio" formControlName="shore" value="1" class="mr-1">Offshore
+                </label>
+                <label class="mr-2">
+                    <input type="radio" formControlName="shore" value="2" class="mr-1">Onshore
+                </label>
+            </div>
+            <select class="form-control" formControlName="select">
+                <option  ng-selected="selected" value="0">Select Location</option>
+                <option  value="1">Chennai</option>
+                <option  value="2">Bangalore</option>
+                <option  value="3">Hyderabad</option>
+                <option  value="4">Pune</option>
+                <option  value="5">Kochi</option>
+                <option  value="6">US</option>
+                <option  value="7">Non Us</option>
+            </select>
+            <div class="alert" *ngIf="location.touched && !location.valid">
+                <div *ngIf="location.errors.locationValidation">Please select the location</div>
+            </div>
+        </div>
+        <div formArrayName="Skills" class="mb-4">
+            <div *ngFor="let skill of skillsList;let i=index" class="form-check form-check-inline col-3 m-2" name="skillcheckbox">
+                <input class="form-check-input" type="checkbox" id="{{skill}}" value="{{skill}}" (change)="addSkill($event)" >
+                <label class="form-check-label" for="checkbox">{{skill}}</label>
+                </div>
+                
+                <div class="alert" *ngIf="Skills.controls.length!=0 && !Skills.valid">
+                <div *ngIf="Skills.errors.skillsValidation">Please select Min 5 skills</div>
+            </div>
+        </div>
+        
+        
+        
+    <div class="form-group mb-4">
+        <label for="File">Upload Profile</label>
+        <input type="file" class="form-control-file" id="File" formControlName="file" >
+
+        <div class="alert" *ngIf="file.touched && !file.valid">
+        <div *ngIf="file.errors.required">Please Upload Profile Picture</div>
+        </div>
+
+    </div>
+    <div class="form-group mb-4">
+        
+        <textarea class="form-control" id="textarea" rows="3" placeholder="Comments" formControlName="textarea"></textarea>
+        </div>
+        <div class="alert" *ngIf="textarea.touched && !textarea.valid">
+        <div *ngIf="textarea.errors.required">Please Enter Comments</div>
+    </div> 
+        <button class="btn btn-primary mr-3" [disabled]=!form.valid>Submit</button>
+        <button class="btn btn-danger" (click)="onReset()">Reset</button>
+    </form>
+</div>

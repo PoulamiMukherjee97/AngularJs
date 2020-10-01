@@ -1,0 +1,10 @@
+<tr  *ngFor="let proj of Projects" id="row{{Projects.indexOf(proj)}}">
+    <td >#</td>
+    <td>{{ proj.name }}<p>Dated {{ proj.date }}</p></td>
+    <td id="mem{{Projects.indexOf(proj)}}">{{proj.members}}</td>
+    <td ><div class='progress'>
+        <div class='progress-bar bg-success' [style.width]="proj.progress+'%'"></div>
+    </div><p>{{proj.progress}}% complete</p></td>
+    <td ><div class='btn btn-success'>{{proj.status}}</div></td>
+    <td><button class='btn btn-primary save-btn p-2 mr-2' (click)="saveContent(Projects.indexOf(proj))" id="save{{Projects.indexOf(proj)}}"><i class='fas fa-folder'></i>Save</button><button class='btn btn-success p-2' (click)="editContent(Projects.indexOf(proj))" id="edit{{Projects.indexOf(proj)}}"><i class='fas fa-pencil-alt'></i>Edit</button><br><button class='btn btn-danger p-2 mt-1' (click)="deleteContent(Projects.indexOf(proj))"><i class='fas fa-trash-alt'></i>Delete</button></td>
+</tr>
