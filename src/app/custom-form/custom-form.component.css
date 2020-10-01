@@ -4,3 +4,13 @@
     padding-left: 0;
     padding-top: 0;
 }
+
+.form-control.ng-touched.ng-invalid{
+    border:2px solid red;
+}
+.form-control-file.ng-touched.ng-invalid{
+    border:2px solid red;
+}
+.location-logic.ng-touched.ng-invalid select{
+    border:2px solid red;
+}
