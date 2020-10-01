@@ -14,7 +14,7 @@ export class CustomFormComponent  {
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(30),
-      Validators.pattern("[a-zA-Z][a-zA-Z ]+[a-zA-Z]$")
+      Validators.pattern("^[a-zA-Z]+(\s[a-zA-Z]+)?$")
     ]),
     'associateId':new FormControl('',[
       Validators.required,

@@ -4,7 +4,7 @@
         <div class="form-group mb-4">
             <input formControlName="associateName" type="text" placeholder="Associate Name" class="form-control" id="associateName">
             <div class="alert" *ngIf="associateName.touched && !associateName.valid">
-                <div *ngIf="associateName.errors.required">This is a required field</div>
+                <div *ngIf="associateName.errors.required">Please enter the Associate Name</div>
                 <div *ngIf="associateName.errors.minlength || associateName.errors.maxlength ">Accepts Alphabets,space & Min 5 to Max 30 Char</div>
                 <div *ngIf="associateName.errors.pattern">Please enter the Associate Name </div>
             </div>
@@ -12,7 +12,7 @@
         <div class="form-group mb-4">
             <input formControlName="associateId"  type="text" placeholder="Associate Id" class="form-control" id="associateId"  >
             <div class="alert" *ngIf="associateId.touched && !associateId.valid">
-                <div *ngIf="associateId.errors.required">This is a required field</div>
+                <div *ngIf="associateId.errors.required">Please enter the Associate Id</div>
                 <div *ngIf="associateId.errors.minlength || associateId.errors.maxlength ">Invalid Associate Id</div>
                 <div *ngIf="associateId.errors.pattern">Please enter the Associate Id </div>
             </div>
@@ -20,7 +20,7 @@
         <div class="form-group mb-4">
             <input formControlName="projectId"  type="text" placeholder="Project Id" class="form-control" id="projectId">
             <div class="alert" *ngIf="projectId.touched && !projectId.valid">
-                <div *ngIf="projectId.errors.required">This is a required field</div>
+                <div *ngIf="projectId.errors.required">Please enter the Project Id</div>
                 <div *ngIf="projectId.errors.minlength || projectId.errors.maxlength  ">Invalid Project Id</div>
                 <div *ngIf="projectId.errors.pattern">Please enter the Project Id </div>
             </div>
