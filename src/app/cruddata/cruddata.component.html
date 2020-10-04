@@ -1,0 +1,12 @@
+
+
+<ul classs="list-group">
+    <li 
+    *ngFor="let student of students" class="list-group-item">{{student.name}}
+    
+    <input type="checkbox" [(ngModel)]="student.isChecked" (checked)="student.isChecked" class="control-input">
+</li>
+</ul>
+ 
+
+<crudoperations [studentData]="students" (sendData)="ModifiedList($event)"></crudoperations>
