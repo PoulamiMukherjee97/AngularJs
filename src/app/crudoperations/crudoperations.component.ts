@@ -14,15 +14,17 @@ export class CrudoperationsComponent implements OnInit {
   constructor( ) {}
   ngOnInit(): void {
     
-    console.log(this.studentData)
+    
     }    
 
   
   add(newStudent:HTMLInputElement){
+    console.log(this.studentData)
     this.studentData.push({name:newStudent.value,isChecked:false});
     this.sendData.emit(this.studentData);
   }
   del(){
+    console.log(this.studentData)
     this.studentData=this.studentData.filter(student=>student.isChecked!=true);
     this.sendData.emit(this.studentData);
   }
