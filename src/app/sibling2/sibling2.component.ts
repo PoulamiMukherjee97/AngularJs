@@ -9,7 +9,7 @@ import { SiblingserviceService } from '../services/siblingservice.service';
 export class Sibling2Component implements OnInit {
   messageFromService=this.service.getMessage();
   constructor(private service:SiblingserviceService) { 
-    this.service.observer$.subscribe(data=>{this.messageFromService=data})
+    this.service.subscribedObserver.subscribe(data=>{this.messageFromService=data})
   }
   ngOnInit(): void {
   }

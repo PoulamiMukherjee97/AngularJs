@@ -7,7 +7,7 @@ import { Subject } from 'rxjs/Subject'
 export class SiblingserviceService {
   private message="This is the initial message";
   public observer = new Subject<string>();
-  public observer$ = this.observer.asObservable();
+  public subscribedObserver = this.observer.asObservable();
   
   constructor() { }
   getMessage(){return this.message}
