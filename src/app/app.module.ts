@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,ErrorHandler } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomFormComponent } from './custom-form/custom-form.component';
 import { CrudoperationsComponent } from './crudoperations/crudoperations.component';
 import { CruddataComponent } from './cruddata/cruddata.component';
+import { PostComponent } from './post/post.component';
+import { PostService } from './post.service';
+import { AppErrorhandler } from './common/app-error-handler';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,10 @@ import { CruddataComponent } from './cruddata/cruddata.component';
     CalculatorComponent,
     CustomFormComponent,
     CrudoperationsComponent,
-    CruddataComponent
+    CruddataComponent,
+    PostComponent,
+    ChildComponent,
+    ParentComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +38,7 @@ import { CruddataComponent } from './cruddata/cruddata.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [PostService,{provide:ErrorHandler,useClass:AppErrorhandler}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
