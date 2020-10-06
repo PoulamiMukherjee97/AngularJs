@@ -17,6 +17,9 @@ import { PostService } from './post.service';
 import { AppErrorhandler } from './common/app-error-handler';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { Sibling2Component } from './sibling2/sibling2.component';
+import { SiblingserviceService } from './services/siblingservice.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { ParentComponent } from './parent/parent.component';
     CruddataComponent,
     PostComponent,
     ChildComponent,
-    ParentComponent
+    ParentComponent,
+    Sibling1Component,
+    Sibling2Component
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,7 @@ import { ParentComponent } from './parent/parent.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [PostService,{provide:ErrorHandler,useClass:AppErrorhandler}],
+  providers: [PostService,{provide:ErrorHandler,useClass:AppErrorhandler},SiblingserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
