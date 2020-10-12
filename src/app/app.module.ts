@@ -20,6 +20,7 @@ import { ParentComponent } from './parent/parent.component';
 import { Sibling1Component } from './sibling1/sibling1.component';
 import { Sibling2Component } from './sibling2/sibling2.component';
 import { SiblingserviceService } from './services/siblingservice.service';
+import { ReactfunctionsComponent } from './reactfunctions/reactfunctions.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SiblingserviceService } from './services/siblingservice.service';
     ChildComponent,
     ParentComponent,
     Sibling1Component,
-    Sibling2Component
+    Sibling2Component,
+    ReactfunctionsComponent
   ],
   imports: [
     BrowserModule,
