@@ -1,0 +1,50 @@
+<header>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+            <i class="fas fa-utensils mr-2" style="color:white"></i>
+          <strong>WISHLIST</strong>
+        </a>
+        <ul class="nav ml-auto">
+            <li class="nav-item" >
+              <a class="nav-link" style="color:white" routerLink="/">Logout</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" style="color:white" routerLink="/restaurants">Back</a>
+            </li>
+            
+        </ul>
+        
+        
+      </div>
+    </div>
+</header>
+<div *ngIf="length===0">
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+            <h1 class="display-4">Aww Snap!!!</h1>
+            <p class="lead">You have nothing in your cart</p>
+        </div>
+        </div>
+</div>
+<div class="album py-5 bg-light" *ngIf="length!=0" >
+    <div class="container">
+        <div  class="row">
+            <div class="col-md-4" *ngFor="let restaurant of cartItems">
+                <div class="card mb-4 box-shadow">
+                <img class="card-img-top" data-src="{{restaurant.photograph}}" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" >
+                    <div class="card-body">
+                        <p class="card-text"><strong class="header">{{restaurant.name}}</strong><br><span class="text-muted">{{restaurant.neighborhood}}</span><br><span>{{restaurant.address}}</span></p>
+                        <p class="card-text">Price for two: {{restaurant.price | currency:'USD'}}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-outline-secondary" (click)="delete(restaurant)">Remove</button>
+                            </div>
+                            <small class="text-muted">Serves: {{restaurant.cuisine_type}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

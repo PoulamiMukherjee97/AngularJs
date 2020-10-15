@@ -21,6 +21,10 @@ import { Sibling1Component } from './sibling1/sibling1.component';
 import { Sibling2Component } from './sibling2/sibling2.component';
 import { SiblingserviceService } from './services/siblingservice.service';
 import { ReactfunctionsComponent } from './reactfunctions/reactfunctions.component';
+import { HomeComponent } from './home/home.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
+import { CartComponent } from './cart/cart.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { ReactfunctionsComponent } from './reactfunctions/reactfunctions.compone
     ParentComponent,
     Sibling1Component,
     Sibling2Component,
-    ReactfunctionsComponent
+    ReactfunctionsComponent,
+    HomeComponent,
+    RestaurantComponent,
+    CartComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +53,7 @@ import { ReactfunctionsComponent } from './reactfunctions/reactfunctions.compone
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [PostService,{provide:ErrorHandler,useClass:AppErrorhandler},SiblingserviceService],
+  providers: [PostService,SiblingserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

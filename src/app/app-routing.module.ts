@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CalculatorComponent } from './calculator/calculator.component';
-import { CustomFormComponent } from './custom-form/custom-form.component';
-import { ReactfunctionsComponent } from './reactfunctions/reactfunctions.component';
+import { CartComponent } from './cart/cart.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
 
 const routes: Routes = [{
   path:'',
-  component:CustomFormComponent
+  component:LoginComponent
 },{
-path:'students',
-component:ReactfunctionsComponent
+  path:'restaurants',
+  component:HomeComponent
+},{
+path:'restaurants/:id',
+component:RestaurantComponent
 },
 {
-path:'calculator',
-component:CalculatorComponent
+path:'placestovisit',
+component:CartComponent
 }];
 
 @NgModule({

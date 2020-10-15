@@ -1,0 +1,27 @@
+<div class="container-fluid text-center ">
+    
+    <form class="form-signin" [formGroup]="form" #f="ngForm" (ngSubmit)="submit(f.value)" style="max-width: 330px;margin:0 auto;width:100%;padding: 15px;">
+        <img class="mb-4" src="https://banner2.cleanpng.com/20180326/xpq/kisspng-italian-cuisine-restaurant-menu-chef-food-eat-5ab9b3eb9eee87.286805151522119659651.jpg" alt="" width="90" height="90">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <div class="alert alert-danger" *ngIf="invalidLogin">Invalid Username or Password</div>
+        <label for="name" class="sr-only">Email address</label>
+        <input type="text" id="name" class="form-control" placeholder="Username" formControlName="Name">
+        <div class="alert alert-danger text-left" *ngIf="Name.touched && !Name.valid">
+            <div *ngIf="Name.errors.required">Please enter the Name</div>
+            <div *ngIf="Name.errors.minlength || Name.errors.maxlength ">Accepts Alphabets,space & Min 5 to Max 30 Char</div>
+            <div *ngIf="Name.errors.pattern">Please enter a valid Name </div>
+        </div>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password">
+        <div class="alert alert-danger text-left" *ngIf="password.touched && !password.valid">
+            <div *ngIf="password.errors.required">Please enter the password</div>
+            <div *ngIf="password.errors.minlength || password.errors.maxlength ">Password length should be 6</div>
+
+        </div>
+            
+            
+        <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" [disabled]=!form.valid>Sign in</button>
+        
+    </form>
+      
+</div>

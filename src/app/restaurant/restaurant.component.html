@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <header class="blog-header py-3">
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+              <a href="#" class="navbar-brand d-flex align-items-center">
+                  <i class="fas fa-utensils mr-2" style="color:white"></i>
+                <strong>{{restaurant[0].name}}</strong>
+              </a>
+              <ul class="nav ml-auto">
+                  <li class="nav-item" >
+                    <a class="nav-link" style="color:white" routerLink="/">Logout</a>
+                  </li>
+                  <li class="nav-item" >
+                    <a class="nav-link" style="color:white" routerLink="/restaurants">Back</a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+      </header>
+      <div class="jumbotron text-white rounded bg-dark " [style.background]="'linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),url('+restaurant[0].photograph+') no-repeat '" style="background-position: center;background-size: cover;height: 500px;position: relative; ">
+        <div  class="text-center">
+          <h1 class="display-4 font-italic mb-3" style="font-size:100px;font-weight:bold;color:#d5c479">{{restaurant[0].name}}</h1>
+          <p class="lead my-3 mx-5 px-5" style="font-size:25px">{{restaurant[0].desc}}</p>    
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 blog-main">
+          <h3 class="pb-3 mb-4 font-italic border-bottom">
+            Restaurant Details
+          </h3>
+            <div class="blog-post">
+                <h2 class="blog-post-title">{{restaurant[0].name}}</h2>
+                <p class="blog-post-meta">{{restaurant[0].neighborhood}}</p>
+                <p>Location: {{restaurant[0].address}}</p>
+                <p><em>Serves: {{restaurant[0].cuisine_type}}</em><br>Freshly out of the oven.Cooked with perfection by the best chefs. </p>
+                <p>Price for 2 people: <strong>{{restaurant[0].price | currency:'USD'}}</strong> </p>
+
+            </div>
+        </div>
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 mb-3 bg-light rounded">
+                <h4 class="font-italic">Operating Hours</h4>
+                <p class="mb-1" >Monday: <em>{{restaurant[0].operating_hours.Monday}}</em></p>
+                <p class="mb-1" >Tuesday: <em>{{restaurant[0].operating_hours.Tuesday}}</em></p>
+                <p class="mb-1" >Wednesday: <em>{{restaurant[0].operating_hours.Wednesday}}</em></p>
+                <p class="mb-1" >Thursday: <em>{{restaurant[0].operating_hours.Thursday}}</em></p>
+                <p class="mb-1" >Friday: <em>{{restaurant[0].operating_hours.Friday}}</em></p>
+                <p class="mb-1" >Saturday: <em>{{restaurant[0].operating_hours.Saturday}}</em></p>
+                <p class="mb-1" >Sunday: <em>{{restaurant[0].operating_hours.Sunday}}</em></p>
+            </div>
+        </aside>
+        
+    </div>
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <h3 class="pb-3 mb-4 font-italic border-bottom">
+              Listen to what the customers have to say....
+            </h3>
+            <div class="row">
+              <div class="col-lg-4 text-center" *ngFor="let cust of restaurant[0].reviews">
+                <img class="rounded-circle mb-2" src="https://png.pngtree.com/png-vector/20190615/ourlarge/pngtree-earthglobalpeopleuserworld--flat-color-icon--vector-icon-png-image_1486795.jpg" alt="Generic placeholder image" width="140" height="140">
+                <h2>{{cust.name}}</h2>
+                <p>Visited on: {{cust.date}}</p>
+                <p>{{cust.comments}}</p>
+                <p>Rating: 
+                    <span *ngFor="let item of arrayOne(cust.rating); let  index=i;"><i class="fas fa-star" style="color:gold"></i></span>
+                  </p>
+              </div>
+              
+      <div>
+    </div>
+</div>
+
+    
